@@ -10,6 +10,7 @@ $ git clone https://github.com/ashikagah/Rogers-McCulloch
 
 ## Usage
 1. Generate spiral waves
+
 The script `generate_spirals.m` is a MATLAB implementation of the Rogers-McCulloch model in two dimensions. 
 
 In MATLAB command window, enter the following command:
@@ -19,6 +20,7 @@ In MATLAB command window, enter the following command:
 The script will create random stimulations to induce (usually multiple) spiral waves in a 2-D lattice. It will save the time series of the excitation variable (_v_) in a file `orig.mat` (~550MB), a movie file `orig_movie.avi` (~50MB), and a stimulation data file `stim.mat`.
 
 2. Convert to phase map
+
 The script `phase_map.m` will map the excitation variable to phase [-pi, pi] using Hilbert transform. 
 
 In MATLAB command window, enter the following command. The file `orig.mat` should be in the same directory.
@@ -28,6 +30,7 @@ In MATLAB command window, enter the following command. The file `orig.mat` shoul
 It will save the time series of the phase in a file `phase.mat` (~500MB), and a movie file `phase_movie.avi` (~70MB).
 
 3. Identify phase singularities
+
 The script `phase_singularity.m` will detect the phase singularities (= rotors) using topological charge. 
 
 In MATLAB command window, enter the following command. The file `phase.mat` should be in the same directory.
