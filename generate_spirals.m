@@ -4,6 +4,7 @@
 %       *  Cariac Arrhythmia Service                      *
 %       *  Johns Hopkins University School of Medicine    *
 %       *  Baltimore, Maryland, USA                       *
+%       *  5/21/2017                                      *
 %       ***************************************************
 
 %% Generate spiral waves using Rogers-McCulloch model of cardiac action potentials
@@ -56,7 +57,7 @@ stim_time = floor(sort(stim_window*rand(1,Ns)));
 save(['stim.mat'],'stim_sites','stim_window','stim_time');
 
 % Rogers-McCulloch Model Main
-s=1;                            % Flag for stimulation
+s = 1;                          % Flag for stimulation
 
 for ti = 1:time_steps
 %%%%%%%%%%%%%%%%%%%%%%   Random stimulations x Ns   %%%%%%%%%%%%%%%%%%%%%%
@@ -66,7 +67,7 @@ for ti = 1:time_steps
     end
 %%%%%%%%%%%%%%%%%%%%%%          Main Loop           %%%%%%%%%%%%%%%%%%%%%%          
     % Padded v matrix for Newman boundary conditions 
-    vv=[[0 v(2,:) 0];[v(:,2) v v(:,end-1)];[0 v(end-1,:) 0]];
+    vv = [[0 v(2,:) 0];[v(:,2) v v(:,end-1)];[0 v(end-1,:) 0]];
     
     % Diffusion term
     vxx = (vv(2:end-1,1:end-2) + vv(2:end-1,3:end) -2*v)/h2; 

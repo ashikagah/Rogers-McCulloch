@@ -4,6 +4,7 @@
 %       *  Cardiac Arrhythmia Service                     *
 %       *  Johns Hopkins University School of Medicine    *
 %       *  Baltimore, Maryland, USA                       *
+%       *  5/21/2017                                      *
 %       ***************************************************
 
 %% Identify phase singularities (= rotors) of spiral waves
