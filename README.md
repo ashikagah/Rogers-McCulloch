@@ -21,7 +21,7 @@ The script will create random stimulations to induce (usually multiple) spiral w
 
 2. Convert to phase map
 
-The script `phase_map.m` will map the excitation variable to phase [-pi, pi] using Hilbert transform. 
+The script `phase_map.m` will map the excitation variable to phase [-pi, pi] using Hilbert transform. The initial period of random stimulations will be removed.
 
 In MATLAB command window, enter the following command. The file `orig.mat` should be in the same directory.
 ```
