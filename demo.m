@@ -15,7 +15,7 @@ close all
 % % % Generate spiral waves
 
 time_units = 20000;                         % 20,000units = 20,000 x 0.63ms/unit = 12,600ms = 12.6sec
-ts = rm_spirals(time_units,stimfilename);   % Generate random stimulations to induce spiral waves
+ts = rm_spirals(time_units);   % Generate random stimulations to induce spiral waves
 save orig.mat ts;                           % Save time series of excitation variable 
 make_movie(ts,'orig_movie.avi',[0 1]);      % Save avi movie file
 
