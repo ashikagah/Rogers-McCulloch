@@ -9,38 +9,23 @@
 
 %% Identify phase singularities (= rotors) of spiral waves
 
-clear all
-close all
+function ps = phase_singularity(p)
+% INPUT:    
+%   p           ... 2-D time series of phase [N x M x time]
+%
+% OUTPUT:
+%   ps          ... 2-D time series of phase singularity [N x M x time]
 
-load phase.mat;
-ps = zeros(size(p));        % Final matrix size = 120x120x4500 (~500MB)
+ps = zeros(size(p));                
 
 for frame=1:size(p,3)
     mat = topcharge(p(:,:,frame));  % +1 (white) - counterclockwise spiral wave
     ps(:,:,frame) = mat;            % -1 (black) - clockwise spiral wave
 end
 clear p
-save(['singularity.mat'],'ps');
 
-% Show frames
-i0 = zeros(size(ps(:,:,1)));
-ih = imagesc(i0); caxis([-1 1]);
-colormap(gray); axis image off; 
-set(gcf,'position',[500 600 512 512],'color',[1 1 1])
-for frame=1:size(ps,3)
-    set(ih,'cdata',ps(:,:,frame));
-    drawnow
-    mov(frame) = getframe;
 end
 
-% Make a movie
-writerObj = VideoWriter(['singularity_movie.avi'],'Motion JPEG AVI');
-writerObj.FrameRate = 120;
-open(writerObj);
-writeVideo(writerObj,mov);
-close(writerObj);
-close all
-clear mov
 
 function singularity = topcharge(phase_map)
 

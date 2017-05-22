@@ -1,7 +1,7 @@
 %       ***************************************************
 %       *  Copyright (C) 2017, Hiroshi Ashikaga, MD, PhD  *
 %       *  hashika1@jhmi.edu                              *
-%       *  Cariac Arrhythmia Service                      *
+%       *  Cardiac Arrhythmia Service                     *
 %       *  Johns Hopkins University School of Medicine    *
 %       *  Baltimore, Maryland, USA                       *
 %       *  5/21/2017                                      *
@@ -18,7 +18,7 @@ function ts = rm_spirals(time_units,stimfilename)
 %   stimfilename ... Name of stimulation file (e.g. 'stim.mat')
 %
 % OUTPUT:
-%   ts           ... 2-D time series [N x M x time]
+%   ts           ... 2-D time series of excitation variable v [N x M x time]
 
 % Model geometry
 ncols = 120;                    % Number of columns in the 2-D lattice; 120 unit x 0.99 mm/unit = 118.8 mm
@@ -48,7 +48,7 @@ iex = zeros(nrows,ncols);       % Initial values
 Ns = 40;                        % Number of point stimulations
 
 if nargin >1
-    load stimfilename
+    load(stimfilename)
 else
     radius = 10;                % Radius (pixels) of point stimulations
     [xx yy] = meshgrid(1:ncols,1:nrows); C = sqrt((xx-ncols/2).^2+(yy-nrows/2).^2)<=radius;
