@@ -16,7 +16,7 @@ In MATLAB command window,
 >> cd Rogers-McCulloch
 >> demo
 ```
-The demo will:
+The demo script will:
 
 1. Generate spiral waves
 
