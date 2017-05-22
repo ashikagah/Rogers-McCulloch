@@ -9,38 +9,29 @@ $ git clone https://github.com/ashikagah/Rogers-McCulloch
 ```
 
 ## Usage
+
+In MATLAB command window, 
+
+```
+>> cd Rogers-McCulloch
+>> demo
+```
+The demo will:
+
 1. Generate spiral waves
 
-The script `generate_spirals.m` is a MATLAB implementation of the Rogers-McCulloch model in two dimensions. 
-
-In MATLAB command window, enter the following command:
-```
->> generate_spirals
-```
-The script will create random stimulations to induce (usually multiple) spiral waves in a 2-D lattice. It will save the time series of the excitation variable (_v_) in a file `orig.mat` (~550MB), a movie file `orig_movie.avi` (~50MB), and a stimulation data file `stim.mat`.
+The function `rm_spirals.m` is a MATLAB implementation of the Rogers-McCulloch model in two dimensions (2-D). The function will create random stimulations to induce (usually multiple) spiral waves in a 2-D lattice. It will save the time series of the excitation variable (_ts_) in a file `orig.mat` and a movie file `orig_movie.avi`. There is an option to save a stimulation data file `stim.mat`.
 
 2. Convert to phase map
 
-The script `phase_map.m` will map the excitation variable to phase [-pi, pi] using Hilbert transform. The initial period of random stimulations will be removed.
-
-In MATLAB command window, enter the following command. The file `orig.mat` should be in the same directory.
-```
->> phase_map
-```
-It will save the time series of the phase in a file `phase.mat` (~500MB), and a movie file `phase_movie.avi` (~70MB).
+The function `phase_map.m` will map the excitation variable (_ts_) to phase [-pi, pi] using Hilbert transform. It will save the time series of the phase (_p_) in a file `phase.mat` and a movie file `phase_movie.avi`.
 
 3. Identify phase singularities
 
-The script `phase_singularity.m` will detect the phase singularities (= rotors) using topological charge. 
-
-In MATLAB command window, enter the following command. The file `phase.mat` should be in the same directory.
-```
->> phase_singularity
-```
-It will save the time series of the phase singularities in a file `singularity.mat` (~1MB), and a movie file `singularity_movie.avi` (~20MB).
+The function `phase_singularity.m` will detect the phase singularities (= rotors) using topological charge. It will save the time series of the phase singularities (_ps_) in a file `singularity.mat` and a movie file `singularity_movie.avi`.
 
 ## Variables
-This model involves two normalized state variables:
+The Rogers-McCulloch model involves two normalized state variables:
 - **_v_**: excitation variable (~ transmembrane potential)
 - _**r**_: relaxation variable 
 
