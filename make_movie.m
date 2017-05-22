@@ -14,6 +14,8 @@ function make_movie(ts,outfilename)
 %   ts          ... 2-D time series [N x M x time]
 %   outfilename ... Filename of movie file (e.g. 'orig_movie.avi')
 %
+% OUTPUT:
+%   Movie file (default is .avi but can be changed into any format)
 
 % Show frames
 i0 = zeros(size(ts(:,:,1)));
