@@ -35,7 +35,7 @@ mu = 1; Dx = 1; Dy = Dx * mu;   % Isotropic diffisivity
 % Integration Parameters
 dt = 0.1;                       % Duration of each time step; 0.1unit x 0.63ms/unit = 0.063ms
 time_steps = time_units/dt;     % Total time steps; 20,000units/0.1 = 200,000steps
-si = 4/dt;                      % Final sampling interval; 4/0.1 = 40steps = 40 x 0.063ms = 2.52ms
+si = 4/dt;                      % Final sampling interval; 4/0.1 = 40steps = 40 x 0.063ms = 2.52ms/frame
                                 % Final sampling rate = 1,000ms/2.52ms ~ 400Hz
 ts = zeros(ncols,nrows,floor(time_steps/si));  
                                 % Final matrix size = 120x120x5000 (~550MB)
