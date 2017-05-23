@@ -2,7 +2,12 @@
 
 The Rogers-McCulloch model is a simplified, two-variable model of cardiac action potential orignally described in [this paper](http://ieeexplore.ieee.org/document/310090/?reload=true).
 
+## How to cite
+
+Ashikaga H. https://github.com/ashikagah/Rogers-McCulloch/
+
 ## Installation
+
 Clone the github repository.
 ```
 $ git clone https://github.com/ashikagah/Rogers-McCulloch
