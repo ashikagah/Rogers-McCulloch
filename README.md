@@ -6,6 +6,10 @@ The Rogers-McCulloch model is a simplified, two-variable model of cardiac action
 
 Ashikaga H. https://github.com/ashikagah/Rogers-McCulloch/
 
+## Dependencies
+
+1. MATLAB - Tested in MATLAB version 2017a with OSX 10.12.5 Sierra
+
 ## Installation
 
 Clone the github repository.
